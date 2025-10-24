@@ -1,8 +1,7 @@
 import { format } from "date-fns";
 
-export default function buildHourlyTable(hours, isMetric=true) {
-  
-  const hourlyContainer = document.querySelector('.hourly-container');
+export default function buildHourlyTable(hours, isMetric = true) {
+  const hourlyContainer = document.querySelector(".hourly-container");
   if (hourlyContainer) hourlyContainer.remove();
 
   const container = document.createElement("div");
@@ -37,8 +36,8 @@ export default function buildHourlyTable(hours, isMetric=true) {
   windspeed.textContent = "Windspeed";
   tableHeader.appendChild(windspeed);
 
-  const rowDataContainer = document.createElement('div');
-  rowDataContainer.classList.add('row-data-container');
+  const rowDataContainer = document.createElement("div");
+  rowDataContainer.classList.add("row-data-container");
   container.appendChild(rowDataContainer);
 
   for (let i = 0; i < hours.length; i += 1) {
@@ -48,7 +47,10 @@ export default function buildHourlyTable(hours, isMetric=true) {
 
     const rowHour = document.createElement("div");
     rowHour.classList.add("hour");
-    rowHour.textContent = format(new Date(`2025-10-24 "${hours[i].datetime}`), "p")
+    rowHour.textContent = format(
+      new Date(`2025-10-24 "${hours[i].datetime}`),
+      "p",
+    );
     rowContainer.appendChild(rowHour);
 
     const rowTemp = document.createElement("div");
@@ -63,12 +65,12 @@ export default function buildHourlyTable(hours, isMetric=true) {
 
     const rowHumidity = document.createElement("div");
     rowHumidity.classList.add("humidity");
-    rowHumidity.textContent = `${hours[i].humidity}%`
+    rowHumidity.textContent = `${hours[i].humidity}%`;
     rowContainer.appendChild(rowHumidity);
 
     const rowWindspeed = document.createElement("div");
     rowWindspeed.classList.add("windspeed");
-    rowWindspeed.textContent = `${hours[i].windspeed}`
+    rowWindspeed.textContent = `${hours[i].windspeed}`;
     rowContainer.appendChild(rowWindspeed);
   }
 

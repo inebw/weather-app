@@ -1,9 +1,9 @@
 import buildDayCard from "./buildDayCard";
 
 export default function buildWeekCards(weatherData) {
-  const weekCardContainer = document.querySelector('.week-card-container');
+  const weekCardContainer = document.querySelector(".week-card-container");
   if (weekCardContainer) weekCardContainer.remove();
-  
+
   const leftButton = document.createElement("button");
   const rightButton = document.createElement("button");
   leftButton.classList.add("left-button");
@@ -19,22 +19,19 @@ export default function buildWeekCards(weatherData) {
   outerContainer.appendChild(container);
   outerContainer.appendChild(rightButton);
 
-
   for (let i = 0; i < weatherData.length; i += 1) {
     const day = buildDayCard(weatherData[i]);
     day.id = i;
     container.append(day);
   }
 
-  leftButton.addEventListener('click', () => {
+  leftButton.addEventListener("click", () => {
     container.scrollLeft -= 200;
-  })
+  });
 
-  rightButton.addEventListener('click', () => {
+  rightButton.addEventListener("click", () => {
     container.scrollLeft += 200;
-  })
-
-
+  });
 
   return outerContainer;
 }
