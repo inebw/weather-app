@@ -1,6 +1,9 @@
 import buildDayCard from "./buildDayCard";
 
 export default function buildWeekCards(weatherData) {
+  const weekCardContainer = document.querySelector('.week-card-container');
+  if (weekCardContainer) weekCardContainer.remove();
+  
   const leftButton = document.createElement("button");
   const rightButton = document.createElement("button");
   leftButton.classList.add("left-button");

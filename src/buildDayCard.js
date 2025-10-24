@@ -1,7 +1,7 @@
 import { format, isToday, isTomorrow } from "date-fns";
 import weatherPNG from "./icons/cloudy.png";
 
-export default function buildDayCard(day, isMetric=true) {
+export default function buildDayCard(day, isMetric = true) {
   const container = document.createElement("div");
   container.classList.add("day-card");
   const myDay = document.createElement("div");
@@ -37,7 +37,7 @@ export default function buildDayCard(day, isMetric=true) {
 
   const myMinTemp = document.createElement("div");
   myMinTemp.classList.add("my-min-temp");
-  myMinTemp.textContent = `Min: ${day.tempmin} ${isMetric ? "℃" : "℉"}`
+  myMinTemp.textContent = `Min: ${day.tempmin} ${isMetric ? "℃" : "℉"}`;
   container.appendChild(myMinTemp);
 
   const myWind = document.createElement("div");
@@ -49,7 +49,6 @@ export default function buildDayCard(day, isMetric=true) {
   myMaxTemp.classList.add("my-max-temp");
   myMaxTemp.textContent = `Max: ${day.tempmax} ${isMetric ? "℃" : "℉"}`;
   container.appendChild(myMaxTemp);
-
 
   return container;
 }

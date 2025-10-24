@@ -45,6 +45,12 @@ h1 {
   font-size: 3rem;
 }
 
+.error-message {
+  margin-top: 30%;
+  font-size: 3rem;
+  align-self: center;
+}
+
 .city-search {
   display: flex;
   flex-direction: column;
@@ -62,6 +68,7 @@ h1 {
   border: black 1px solid;
   border-radius: 8px;
   width: 85%;
+  padding: 10px;
 }
 #search,
 .search-img {
