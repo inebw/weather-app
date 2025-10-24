@@ -1,5 +1,5 @@
 {
-  "name": "template-repo",
+  "name": "weather-app",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,15 +10,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/inebw/template-repo.git"
+    "url": "git+https://github.com/inebw/weather-app.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/inebw/template-repo/issues"
+    "url": "https://github.com/inebw/weather-app/issues"
   },
-  "homepage": "https://github.com/inebw/template-repo#readme",
+  "homepage": "https://github.com/inebw/weather-app#readme",
   "devDependencies": {
     "@eslint/js": "^9.38.0",
     "css-loader": "^7.1.2",
@@ -35,5 +35,8 @@
     "webpack-cli": "^6.0.1",
     "webpack-dev-server": "^5.2.2",
     "webpack-merge": "^6.0.1"
+  },
+  "dependencies": {
+    "date-fns": "^4.1.0"
   }
 }
