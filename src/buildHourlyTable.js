@@ -34,6 +34,10 @@ export default function buildHourlyTable(hours, isMetric=true) {
   windspeed.textContent = "Windspeed";
   tableHeader.appendChild(windspeed);
 
+  const rowDataContainer = document.createElement('div');
+  rowDataContainer.classList.add('row-data-container');
+  container.appendChild(rowDataContainer);
+
   for (let i = 0; i < hours.length; i += 1) {
     const rowContainer = document.createElement("div");
     rowContainer.classList.add("row-container");
@@ -41,7 +45,7 @@ export default function buildHourlyTable(hours, isMetric=true) {
 
     const rowHour = document.createElement("div");
     rowHour.classList.add("hour");
-    rowHour.textContent = format(new Date(hours[i].datetimeEpoch), "p")
+    rowHour.textContent = format(new Date("2025-10-24 " + hours[i].datetime), "p")
     rowContainer.appendChild(rowHour);
 
     const rowTemp = document.createElement("div");

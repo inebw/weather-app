@@ -29,6 +29,9 @@ body {
 
 .container {
   width: 900px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .day-card {
@@ -100,14 +103,20 @@ body {
 }
 
 .hourly-container {
+  position: relative;
   display: flex;
-  padding: 20px 45px 45px 45px;
-  /* border: 1px solid black;
-  border-radius: 16px; */
+  flex-direction: column;
+  padding: 0px 45px 45px 45px;
+  height: 60vh;
+  overflow: scroll;
+  scrollbar-width: none;
 }
 
 .table-header {
+  background-color: white;
+  position: sticky;
   width: 100%;
+  top: 0px;
   display: flex;
   gap: 10px;
   border: 1px solid black;
