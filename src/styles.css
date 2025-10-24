@@ -34,6 +34,49 @@ body {
   gap: 20px;
 }
 
+.header {
+  display: flex;
+  width: 800px;
+  justify-content: space-between;
+  padding-bottom: 20px;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+.city-search {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+#search {
+  border: black 1px solid;
+  border-radius: 8px;
+  width: 85%;
+}
+#search,
+.search-img {
+  height: 2rem;
+}
+
+.search-img {
+  padding: 3px 1px 1px 1px;
+}
+
+.search-button:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
 .day-card {
   display: grid;
   font-size: 0.6rem;
@@ -44,6 +87,7 @@ body {
   border-radius: 16px;
   gap: 5px;
   min-width: 180px;
+  transition: transform 200ms;
 }
 
 .my-day {
@@ -90,31 +134,41 @@ body {
   align-self: center;
   display: flex;
   justify-content: center;
-  cursor: pointer;
   user-select: none;
   height: 25px;
   width: 25px;
   font-size: 2rem;
 }
 
+.day-card:hover,
 .left-button:hover,
 .right-button:hover {
   color: gray;
+  cursor: pointer;
+}
+
+.day-card:hover {
+  transition: transform 200ms;
+  transform: translateY(-5px);
 }
 
 .hourly-container {
-  position: relative;
   display: flex;
   flex-direction: column;
   padding: 0px 45px 45px 45px;
   height: 60vh;
+  gap: 10px;
+}
+
+.row-data-container {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
   overflow: scroll;
   scrollbar-width: none;
 }
 
 .table-header {
-  background-color: white;
-  position: sticky;
   width: 100%;
   top: 0px;
   display: flex;

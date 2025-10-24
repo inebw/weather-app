@@ -4,10 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather App</title>
-    <link rel="icon" type="image/x-icon" href="icons/cloudy.png">
+    <link rel="icon" type="image/x-icon" href="icons/cloudy.png" />
   </head>
   <body>
-    <h1>Weather App</h1>
+    <div class="header">
+      <h1>Weather App</h1>
+      <div class="city-search">
+        <h2 class="city-name">Enter your city name</h2>
+        <div class="search">
+          <input type="search" id="search">
+          <button class="search-button"><img src="icons/search.png" alt="search-button" class="search-img"></button>
+        </div>
+      </div>
+    </div>
     <div class="container"></div>
   </body>
 </html>

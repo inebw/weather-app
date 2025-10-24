@@ -1,7 +1,10 @@
 import { format } from "date-fns";
 
 export default function buildHourlyTable(hours, isMetric=true) {
-  console.log(hours)
+  
+  const hourlyContainer = document.querySelector('.hourly-container');
+  if (hourlyContainer) hourlyContainer.remove();
+
   const container = document.createElement("div");
   container.classList.add("hourly-container");
 
@@ -41,11 +44,11 @@ export default function buildHourlyTable(hours, isMetric=true) {
   for (let i = 0; i < hours.length; i += 1) {
     const rowContainer = document.createElement("div");
     rowContainer.classList.add("row-container");
-    container.appendChild(rowContainer);
+    rowDataContainer.appendChild(rowContainer);
 
     const rowHour = document.createElement("div");
     rowHour.classList.add("hour");
-    rowHour.textContent = format(new Date("2025-10-24 " + hours[i].datetime), "p")
+    rowHour.textContent = format(new Date(`2025-10-24 "${hours[i].datetime}`), "p")
     rowContainer.appendChild(rowHour);
 
     const rowTemp = document.createElement("div");
