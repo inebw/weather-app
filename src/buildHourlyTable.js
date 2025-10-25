@@ -1,4 +1,14 @@
 import { format } from "date-fns";
+function importAll(r) {
+  const images = {};
+  r.keys().forEach((key) => {
+    const fileName = key.replace("./", "").replace(".svg", "");
+    images[fileName] = r(key);
+  });
+  return images;
+}
+
+const svgs = importAll(require.context("./weatherIcons", false, /\.svg$/));
 
 export default function buildHourlyTable(hours, isMetric = true) {
   const hourlyContainer = document.querySelector(".hourly-container");
@@ -54,9 +64,16 @@ export default function buildHourlyTable(hours, isMetric = true) {
     rowContainer.appendChild(rowHour);
 
     const rowTemp = document.createElement("div");
+    
     rowTemp.classList.add("temp");
     rowTemp.textContent = `${hours[i].temp} ${isMetric ? "℃" : "℉"}`;
     rowContainer.appendChild(rowTemp);
+
+    const tempImg = document.createElement("img");
+    tempImg.classList.add("temp-img");
+    tempImg.src = svgs[hours[i].icon];
+    rowTemp.appendChild(tempImg);
+
 
     const rowFeelsLike = document.createElement("div");
     rowFeelsLike.classList.add("feels-like");

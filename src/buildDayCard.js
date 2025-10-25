@@ -1,5 +1,15 @@
 import { format, isToday, isTomorrow } from "date-fns";
 import weatherPNG from "./icons/cloudy.png";
+function importAll(r) {
+  const images = {};
+  r.keys().forEach((key) => {
+    const fileName = key.replace('./', '').replace('.svg', '');
+    images[fileName] = r(key);
+  });
+  return images;
+}
+
+const svgs = importAll(require.context('./weatherIcons', false, /\.svg$/));
 
 export default function buildDayCard(day, isMetric = true) {
   const container = document.createElement("div");
@@ -22,7 +32,7 @@ export default function buildDayCard(day, isMetric = true) {
   const iconIMG = document.createElement("img");
   iconIMG.classList.add("icon-img");
   iconDIV.appendChild(iconIMG);
-  iconIMG.src = weatherPNG;
+  iconIMG.src = svgs[day.icon];
   container.appendChild(iconDIV);
 
   const myTemp = document.createElement("div");
