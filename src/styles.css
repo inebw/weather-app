@@ -178,8 +178,13 @@ h1 {
 
 .degree-changer:hover,
 .day-card:hover {
+  background-color: #393c3f;
   transition: transform 200ms;
   transform: translateY(-5px);
+}
+
+.row-container:hover {
+  background-color: #393c3f;
 }
 
 .degree-changer {
