@@ -64,7 +64,7 @@ export default function buildHourlyTable(hours, isMetric = true) {
     rowContainer.appendChild(rowHour);
 
     const rowTemp = document.createElement("div");
-    
+
     rowTemp.classList.add("temp");
     rowTemp.textContent = `${hours[i].temp} ${isMetric ? "℃" : "℉"}`;
     rowContainer.appendChild(rowTemp);
@@ -73,7 +73,6 @@ export default function buildHourlyTable(hours, isMetric = true) {
     tempImg.classList.add("temp-img");
     tempImg.src = svgs[hours[i].icon];
     rowTemp.appendChild(tempImg);
-
 
     const rowFeelsLike = document.createElement("div");
     rowFeelsLike.classList.add("feels-like");

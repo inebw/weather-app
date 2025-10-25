@@ -3,13 +3,13 @@ import weatherPNG from "./icons/cloudy.png";
 function importAll(r) {
   const images = {};
   r.keys().forEach((key) => {
-    const fileName = key.replace('./', '').replace('.svg', '');
+    const fileName = key.replace("./", "").replace(".svg", "");
     images[fileName] = r(key);
   });
   return images;
 }
 
-const svgs = importAll(require.context('./weatherIcons', false, /\.svg$/));
+const svgs = importAll(require.context("./weatherIcons", false, /\.svg$/));
 
 export default function buildDayCard(day, isMetric = true) {
   const container = document.createElement("div");

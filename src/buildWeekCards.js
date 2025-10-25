@@ -1,6 +1,6 @@
 import buildDayCard from "./buildDayCard";
 
-export default function buildWeekCards(weatherData) {
+export default function buildWeekCards(weatherData, isMetric = true) {
   const weekCardContainer = document.querySelector(".week-card-container");
   if (weekCardContainer) weekCardContainer.remove();
 
@@ -20,8 +20,9 @@ export default function buildWeekCards(weatherData) {
   outerContainer.appendChild(rightButton);
 
   for (let i = 0; i < weatherData.length; i += 1) {
-    const day = buildDayCard(weatherData[i]);
+    const day = buildDayCard(weatherData[i], isMetric);
     day.id = i;
+    if (i === 0) day.classList.add("current");
     container.append(day);
   }
 
