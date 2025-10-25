@@ -58,7 +58,7 @@ export default function buildHourlyTable(hours, isMetric = true) {
     const rowHour = document.createElement("div");
     rowHour.classList.add("hour");
     rowHour.textContent = format(
-      new Date(`2025-10-24 "${hours[i].datetime}`),
+      new Date(`2025-10-24 ${hours[i].datetime}`),
       "p",
     );
     rowContainer.appendChild(rowHour);
